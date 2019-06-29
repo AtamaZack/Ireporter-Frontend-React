@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AllRedflags /> should render the all redflags component 1`] = `ShallowWrapper {}`;

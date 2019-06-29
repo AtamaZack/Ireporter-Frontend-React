@@ -5,11 +5,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+
+import { defaultImagePath } from '../../utils';
+
 // Componenets
 import NavBar from '../NavBar';
-// import { newUser } from '../../store/actions/loginAction';
+import { login } from '../../store/actions/loginAction';
 
-class SignUp extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,30 +42,41 @@ class SignUp extends Component {
     return (
       <div>
         <NavBar />
-        <form onSubmit={this.handleSubmit}>
-          <input
-          type="text"
-          name="email"
-          placeholder="email"
-          value={email}
-          onChange={this.handleChange}
-          required
-          />
-          <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={password}
-          onChange={this.handleChange}
-          required
-          />
-          <button
-            className=""
-            type="submit"
-          >
-          Loginç
-        </button>
-        </form>
+        <div align="center">
+          <img className="banner" src={`${defaultImagePath}/banner.png`} />
+          <form onSubmit={this.handleSubmit} className="inputForm">
+            <input
+            className="inputForm__inputField" 
+            type="text"
+            name="email"
+            placeholder="email"
+            value={email}
+            onChange={this.handleChange}
+            required
+            />
+            <input
+            className="inputForm__inputField" 
+            type="password"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={this.handleChange}
+            required
+            />
+            <div align="left" className="Buttons">
+              <button
+                className="inputForm__Button"
+                type="submit"
+                name="login"
+                >
+                Login
+              </button>
+              <a href="/">
+                Sign Up
+              </a>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
@@ -70,14 +84,14 @@ class SignUp extends Component {
 
 
 
-SignUp.propTypes = {
-  signUp: PropTypes.func.isRequired,
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
 };
 
-export const mapStateToProps = ({ signupReducer: user }) => (user);
+export const mapStateToProps = ({ loginReducer: user }) => (user);
 
 export const mapDispatchToProps = dispatch => ({
-  signUp(userData) { dispatch(newUser(userData)); }
+  loginUser(userLoginData) { dispatch(login(userLoginData)); }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

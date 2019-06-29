@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+@import "sass-rem";
+
+$primary_color: #890000;
+$black: #000000;
+$white: #ffffff;
+$box-shadow-black: rem(0px) rem(2px) rem(4px) $black;
+$text-shadow-black: rem(0px) rem(2px) rem(4px) $black;
+$text-shadow-white: rem(0px) rem(2px) rem(4px) $white;
+
+$primary-font-family: "Open Sans", sans-serif;
+
+* {
+  margin: 0;
+}
+
+.NavBarPanel {
+  width: 100%;
+  height: 9rem;
+  box-shadow: $box-shadow-black;
+  margin-bottom: 1rem;
+
+  &__Navbar {
+    width: 50%;
+    padding-top: 3.5rem;    
+    float: left;
+    padding-left: 12%;
+
+    ul li {
+      display: inline;
+    }
+
+    ul li a {
+      text-decoration: none;
+      margin: 0 2rem;
+      font-size: 20px;
+      font-family: $primary-font-family;
+      color: $black;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__logo {
+    width: 9rem;
+    padding-top: 0.4rem;
+    float: right;
+    padding-right: 15%;
+
+    img {
+      width: 8rem;
+    }
+  }
+}
