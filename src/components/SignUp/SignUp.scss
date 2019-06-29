@@ -1,0 +1,62 @@
+.Buttons a {
+  float: right;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  background: #AAA;
+  padding: 2% 5%;
+  text-shadow: 2px 4px 6px white;
+  font-family: "Open Sans", sans-serif;
+  color: #000;
+
+  &:hover {
+    color: white;
+    text-shadow: 2px 4px 6px black;
+    box-shadow: 2px 4px 6px black;
+  }
+
+}
+
+.banner {
+  width: 30%;
+}
+
+.inputForm {
+  width: 30%;
+  background: #5d5d5d3f;
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+
+  &__inputField {
+    display: block;
+    width: 95%;
+    min-width: 300px;
+    background: none;
+    border: 1px white solid;
+    margin: 20px 0;
+    border-radius: 0.8rem;
+    padding: 2%;
+    font-size: 16px;
+    outline: none;
+
+    &:hover {
+      border: 1px #EEE solid;
+    }
+  }
+
+  &__Button {
+    border-radius: 0.8rem;
+    background: #AAA;
+    padding: 2% 5%;
+    font-size: 16px;
+    outline: none;
+    text-shadow: 2px 4px 6px white;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+      text-shadow: 2px 4px 6px black;
+      box-shadow: 2px 4px 6px black;
+    }
+
+  }
+}
