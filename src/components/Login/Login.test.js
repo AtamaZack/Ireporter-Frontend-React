@@ -36,6 +36,18 @@ describe('<Login />', () => {
     };
     expect(mapStateToProps(initialState)).toEqual({user: {}})
 
+  }); 
+
+  it('handle change', ()=>{
+    const e = {
+      target:{
+        name:"email",
+        value:"zack@g.com"
+      }
+    }
+    wrapper.instance().handleChange(e);
+    expect(wrapper.instance().state.email).toBe('zack@g.com');
   });
+
 });
 

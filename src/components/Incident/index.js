@@ -12,7 +12,7 @@ import { defaultImagePath } from '../../utils';
 import NavBar from '../NavBar';
 import { newIncident } from '../../store/actions/incidentActions';
 
-class Incident extends Component {
+export class Incident extends Component {
   constructor(props) {
     super(props);
     this.state = {
