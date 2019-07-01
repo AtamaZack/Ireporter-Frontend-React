@@ -11,7 +11,7 @@ describe('<Login />', () => {
     wrapper = shallow(<Login {...props}/>);
   })
 
-  it('should render the signup component', () => {  
+  it('should render the login component', () => {  
     expect(wrapper).toMatchSnapshot();
   }); 
 

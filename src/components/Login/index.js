@@ -45,6 +45,7 @@ export class Login extends Component {
         <div align="center">
           <img className="banner" src={`${defaultImagePath}/banner.png`} />
           <form onSubmit={this.handleSubmit} className="inputForm">
+            <p className="errorsPanel" id="errors"></p>
             <input
             className="inputForm__inputField" 
             type="text"
