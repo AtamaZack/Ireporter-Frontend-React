@@ -17,9 +17,18 @@ export const newIncident = redflag => (dispatch) => {
   return axios.post(url, JSON.stringify(redflag), axiosIncidentConfig)
     .then((response) => {
       dispatch(createIncident(redflag));
+      let x = document.getElementById("errors");
+      x.style.color = "#0a0";
+      x.style.borderRadius = "0.8rem"
+      x.style.border = "1px #0a0 solid"
+      x.innerHTML = "Report successful, proceed to view all your Redflags";
       window.location = `/red-flags`;
     }).catch((error) => {
-      console.log(error);
+      let x = document.getElementById("errors");
+      x.style.borderRadius = "0.8rem"
+      x.style.border = "1px #C00 solid"
+      x.style.color = "#C00";
+      x.innerHTML = error.response.data.message.error;
     });
 };
 
@@ -33,6 +42,5 @@ export const getAllRedflags = () => (dispatch) => {
   return axios.get(url, axiosIncidentConfig)
     .then((response) => {
       dispatch(allRedflags(response.data.data))
-      // console.log(response.data.data);
-    }).catch(error => console.log(error));
+    });
 };

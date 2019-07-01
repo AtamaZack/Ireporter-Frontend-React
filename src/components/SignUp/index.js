@@ -53,13 +53,14 @@ export class SignUp extends Component {
   }
 
   render() {
-    const { firstname, lastname, othernames, email, phoneNumber, username, password, isAdmin } = this.state;
+    const { firstname, lastname, othernames, email, phoneNumber, username, password } = this.state;
     return (
       <div>
         <NavBar />
         <div align="center">
           <img className="banner" src={`${defaultImagePath}/banner.png`} />
           <form onSubmit={this.handleSubmit} className="inputForm">
+            <p className="errorsPanel" id="errors"></p>
             <input
             className="inputForm__inputField" 
             type="text"

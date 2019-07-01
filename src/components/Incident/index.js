@@ -47,6 +47,7 @@ class Incident extends Component {
           <br />
           <br />
           <form onSubmit={this.handleSubmit} className="inputForm">
+            <p className="errorsPanel" id="errors"></p>
             <input
             className="inputForm__inputField" 
             type="text"
