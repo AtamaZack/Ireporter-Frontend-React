@@ -11,7 +11,7 @@ describe('<Login />', () => {
     wrapper = shallow(<Login {...props}/>);
   })
 
-  it('should render the signup component', () => {  
+  it('should render the login component', () => {  
     expect(wrapper).toMatchSnapshot();
   }); 
 
@@ -36,6 +36,18 @@ describe('<Login />', () => {
     };
     expect(mapStateToProps(initialState)).toEqual({user: {}})
 
+  }); 
+
+  it('handle change', ()=>{
+    const e = {
+      target:{
+        name:"email",
+        value:"zack@g.com"
+      }
+    }
+    wrapper.instance().handleChange(e);
+    expect(wrapper.instance().state.email).toBe('zack@g.com');
   });
+
 });
 
